@@ -16,6 +16,7 @@ public class FromEcQueueToEcInstanceRoute extends RouteBuilder
 	public void configure() throws Exception
 	{
 		from("amqp:queue:" + queueName) //
+				.id("===from a specific EC queue===")//
 				.log("got from ec-outbound queue ${body}")
 				.to("seda:saveMessageInfo") //
 				.setExchangePattern(ExchangePattern.OutOnly) //

@@ -12,6 +12,7 @@ public class FromSccTopicRoute extends RouteBuilder
 	public void configure() throws Exception
 	{
 		from("amqp:topic:" + TOPIC_SUBSCRIPTION_NAME)//
+				.id("===from scc-internal topic===")//
 				.log("got from scc-intrenal topic ${in.headers.tenantID}-${in.headers.environmentId} ${body}") //
 				.choice() //
 				.when(header("type").contains("store")) //

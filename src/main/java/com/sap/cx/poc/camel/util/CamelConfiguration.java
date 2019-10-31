@@ -19,7 +19,7 @@ public class CamelConfiguration
 		getCamelContext().addRoutes(new FromEcQueueToEcInstanceRoute(ecQueueName));
 	}
 
-	@PostConstruct
+	//@PostConstruct
 	public void init() throws Exception
 	{
 		addEcRoute("ec-outbound-tenantId-envId");

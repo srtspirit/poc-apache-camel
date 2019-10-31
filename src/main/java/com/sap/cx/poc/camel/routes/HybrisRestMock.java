@@ -16,6 +16,7 @@ public class HybrisRestMock extends RouteBuilder
 				.post("{tenantId}/{environmentId}")
 				.to("direct:resttest");
 		from("direct:resttest")
+				.id("===hybris rest mock===")//
 				.log("restServer: ${body}")
 				.to("file://created_stores?fileName=${header.tenantId}-${header.environmentId}")
 				.end();

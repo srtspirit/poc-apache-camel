@@ -20,10 +20,11 @@ public class GetAcknowledgeFromEc extends RouteBuilder
 				.post("{corelId}")
 				.to("direct:handleHybrisResponse");
 		from("direct:handleHybrisResponse")
+				.id("===handle acknowledge from hybris===")
 				.log("response from hybris: ${body}")
 				.log("corelId: ${header.corelId}")
 				//.setExchangePattern(ExchangePattern.InOut)
-				.pollEnrich("file:pending_updates?fileName=${header.corelId}&charset=utf-8&noop=true")
+				.pollEnrich("file:pending_updates?fileName=${header.corelId}")
 				//.bean(new DebugBean())
 				.process(exch -> {
 					System.out.println("inside of processor");
