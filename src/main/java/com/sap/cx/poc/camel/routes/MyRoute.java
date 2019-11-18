@@ -13,9 +13,8 @@ public class MyRoute extends RouteBuilder
 	@Override
 	public void configure() throws Exception
 	{
-		from("timer:camelTimer?period=5000")
-				.setBody(constant("hi"))
-				.log("${body}")
-				.to("amqp:queue:camel");
+		from("custom:ec-session-enabled-queue")
+				.bean(new MyRoute())
+				.log("${body}");
 	}
 }

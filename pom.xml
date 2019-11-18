@@ -66,6 +66,12 @@
             <artifactId>camel-amqp</artifactId>
             <version>2.24.2</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.microsoft.azure</groupId>
+            <artifactId>azure-servicebus</artifactId>
+            <version>3.1.1</version>
+        </dependency>
     </dependencies>
 
 
