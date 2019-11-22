@@ -25,7 +25,7 @@
     </build>
 
     <dependencies>
-        <!-- https://mvnrepository.com/artifact/org.apache.camel/camel-core -->
+        <!-- - https://mvnrepository.com/artifact/org.apache.camel/camel-core -->
         <dependency>
             <groupId>org.apache.camel</groupId>
             <artifactId>camel-core</artifactId>
@@ -60,6 +60,26 @@
             <version>5.2.0.RELEASE</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-beans -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+            <version>5.2.0.RELEASE</version>
+        </dependency>
+
+        <!--dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>2.0.6.RELEASE</version>
+        </dependency-->
+
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-web -->
+        <!--dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>5.2.0.RELEASE</version>
+        </dependency-->
+
         <!-- https://mvnrepository.com/artifact/org.apache.camel/camel-amqp -->
         <dependency>
             <groupId>org.apache.camel</groupId>
@@ -67,10 +87,39 @@
             <version>2.24.2</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.apache.qpid/qpid-client -->
+        <!--dependency>
+            <groupId>org.apache.qpid</groupId>
+            <artifactId>qpid-client</artifactId>
+            <version>6.3.4</version>
+        </dependency-->
+
+        <!-- https://mvnrepository.com/artifact/org.apache.camel/camel-rest-starter -->
         <dependency>
-            <groupId>com.microsoft.azure</groupId>
-            <artifactId>azure-servicebus</artifactId>
-            <version>3.1.1</version>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-rest-starter</artifactId>
+            <version>3.0.0-RC3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-netty4</artifactId>
+            <version>2.24.2</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.camel/camel-http4 -->
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-http4</artifactId>
+            <version>2.24.2</version>
+        </dependency>
+
+
+        <!-- https://mvnrepository.com/artifact/org.apache.camel/camel-restlet -->
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-restlet</artifactId>
+            <version>2.24.2</version>
         </dependency>
     </dependencies>
 
