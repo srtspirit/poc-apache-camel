@@ -2,10 +2,13 @@ package com.sap.cx.poc.camel.beans;
 
 import org.apache.camel.component.amqp.AMQPComponent;
 
+import org.apache.camel.component.http4.HttpComponent;
 import org.apache.camel.processor.RedeliveryPolicy;
 import org.apache.qpid.jms.JmsConnectionFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.jms.connection.JmsTransactionManager;
+import org.springframework.transaction.PlatformTransactionManager;
 
 
 @Configuration
@@ -18,6 +21,11 @@ public class Beans
 		jmsConnectionFactory.setRemoteURI("amqps://storemanager.servicebus.windows.net");
 		jmsConnectionFactory.setUsername("RootManageSharedAccessKey");
 		jmsConnectionFactory.setPassword("TGF+wMnnLKaUoG0O+ySdHCo+etfkm7g6xxw1UxtCEJY=");
+
+		jmsConnectionFactory.setCloseTimeout(1000L);
+		jmsConnectionFactory.setConnectTimeout(1000L);
+		jmsConnectionFactory.setRequestTimeout(1000L);
+		jmsConnectionFactory.setSendTimeout(1000L);
 
 		return jmsConnectionFactory;
 	}
@@ -42,5 +50,11 @@ public class Beans
 		redeliveryPolicy.setRedeliveryDelay(5000L);
 		redeliveryPolicy.setBackOffMultiplier(2D);
 		return redeliveryPolicy;
+	}
+
+	@Bean
+	public PlatformTransactionManager platformTransactionManager(final JmsConnectionFactory jmsConnectionFactory)
+	{
+		return new JmsTransactionManager(jmsConnectionFactory);
 	}
 }
